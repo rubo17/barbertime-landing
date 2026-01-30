@@ -1,0 +1,56 @@
+---
+const features = [
+	{
+		icon: "calendar",
+		title: "Agenda automática",
+		description: "Tus clientes reservan online. Sin llamadas, sin WhatsApp, sin interrupciones mientras trabajas."
+	},
+	{
+		icon: "users",
+		title: "Gestión de equipo",
+		description: "Organiza los horarios de tus empleados y asigna citas automáticamente según disponibilidad."
+	},
+	{
+		icon: "chart",
+		title: "Control de ingresos",
+		description: "Visualiza tus ganancias diarias, semanales y mensuales. Sabe exactamente cuánto factura cada barbero."
+	},
+	{
+		icon: "bell",
+		title: "Recordatorios",
+		description: "Reduce las citas perdidas con notificaciones automáticas a tus clientes antes de su reserva."
+	},
+];
+
+const icons: Record<string, string> = {
+	calendar: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />`,
+	users: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />`,
+	chart: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />`,
+	bell: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />`,
+};
+---
+
+<section id="caracteristicas" class="py-20 md:py-32">
+	<div class="mx-auto max-w-6xl px-6">
+		<div class="mx-auto max-w-2xl text-center">
+			<h2 class="text-3xl font-bold md:text-4xl">
+				Todo lo que necesitas para tu barbería
+			</h2>
+			<p class="mt-4 text-text-secondary">
+				Herramientas diseñadas por y para barberos que quieren crecer.
+			</p>
+		</div>
+
+		<div class="mt-16 grid gap-8 md:grid-cols-2">
+			{features.map((feature) => (
+				<div class="rounded-2xl border border-border p-8 transition-colors hover:border-sub">
+					<div class="flex h-12 w-12 items-center justify-center rounded-lg bg-border">
+						<svg class="h-6 w-6 text-text" fill="none" stroke="currentColor" viewBox="0 0 24 24" set:html={icons[feature.icon]} />
+					</div>
+					<h3 class="mt-6 text-xl font-semibold">{feature.title}</h3>
+					<p class="mt-2 text-text-secondary">{feature.description}</p>
+				</div>
+			))}
+		</div>
+	</div>
+</section>

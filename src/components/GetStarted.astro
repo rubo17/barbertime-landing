@@ -1,0 +1,58 @@
+---
+const steps = [
+	{
+		number: "01",
+		title: "Crea tu cuenta",
+		description: "Regístrate en menos de un minuto. Sin tarjeta de crédito."
+	},
+	{
+		number: "02",
+		title: "Configura tu barbería",
+		description: "Añade tus servicios, precios y horarios de apertura."
+	},
+	{
+		number: "03",
+		title: "Comparte tu enlace",
+		description: "Tus clientes ya pueden reservar. Tú solo cortas."
+	},
+];
+---
+
+<section id="empieza" class="py-20 md:py-32">
+	<div class="mx-auto max-w-6xl px-6">
+		<div class="rounded-3xl border border-border bg-border/20 p-8 md:p-16">
+			<div class="mx-auto max-w-2xl text-center">
+				<h2 class="text-3xl font-bold md:text-4xl">
+					Empieza en 3 pasos
+				</h2>
+				<p class="mt-4 text-text-secondary">
+					Sin complicaciones. Tu barbería online en minutos.
+				</p>
+			</div>
+
+			<div class="mt-12 grid gap-8 md:grid-cols-3">
+				{steps.map((step) => (
+					<div class="text-center">
+						<div class="mx-auto flex h-14 w-14 items-center justify-center rounded-full border border-border bg-bg text-lg font-bold text-text-secondary">
+							{step.number}
+						</div>
+						<h3 class="mt-6 text-lg font-semibold">{step.title}</h3>
+						<p class="mt-2 text-sm text-text-secondary">{step.description}</p>
+					</div>
+				))}
+			</div>
+
+			<div class="mt-12 text-center">
+				<a
+					href="#"
+					class="inline-block rounded-lg bg-text px-8 py-4 font-medium text-bg transition-opacity hover:opacity-90"
+				>
+					Crear cuenta gratis
+				</a>
+				<p class="mt-4 text-sm text-text-secondary">
+					Prueba gratuita de 14 días. Cancela cuando quieras.
+				</p>
+			</div>
+		</div>
+	</div>
+</section>
