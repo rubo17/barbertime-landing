@@ -1,0 +1,33 @@
+name: Deploy landing pages barbertime
+
+on:
+  push:
+    branches:
+      - main   
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1️⃣ Clonar el repo
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      # 2️⃣ Instalar dependencias y construir Astro
+      - name: Install dependencies & Build Astro
+        run: |
+          npm install
+          npm run build
+
+      # 3️⃣ Subir la carpeta dist/ a Hostinger vía FTP
+      - name: Deploy via FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_SERVER }}      # tu host FTP
+          username: ${{ secrets.FTP_USERNAME }}  # tu usuario FTP
+          password: ${{ secrets.FTP_PASSWORD }}  # tu contraseña FTP
+          port: ${{ secrets.FTP_PORT }}          # usualmente 21
+          protocol: ftp
+          local-dir: ./dist/                     # Astro genera aquí la wedb final
+          server-dir: /public_html/          # carpetaa raíz de tu dominio en Hostinger
