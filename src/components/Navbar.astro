@@ -1,7 +1,7 @@
 ---
 const navLinks = [
-	{ href: "#caracteristicas", label: "Características" },
-	{ href: "#empieza", label: "Empieza" },
+	{ href: "#caracteristicas", label: "Características", redirect: false },
+	{ href: "#empieza", label: "Empieza", redirect: false },
 ];
 ---
 
@@ -22,10 +22,12 @@ const navLinks = [
 					</a>
 				))}
 				<a
-					href="#empieza"
+					href="#"
+					target="_blank"
+					rel="noopener noreferrer"
 					class="group relative overflow-hidden rounded-lg bg-primary/90 px-4 py-2 text-sm font-medium text-black transition-all duration-300 hover:bg-primary hover:shadow-[0_0_15px_rgba(6,182,212,0.3)]"
 				>
-					<span class="relative z-10">Comenzar</span>
+					<span class="relative z-10">App Clientes</span>
 					<div class="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/10 to-transparent transition-transform duration-500 group-hover:translate-x-full"></div>
 				</a>
 			</div>
@@ -51,10 +53,12 @@ const navLinks = [
 				</a>
 			))}
 			<a
-				href="#empieza"
+				href="#"
+				target="_blank"
+				rel="noopener noreferrer"
 				class="mt-4 block rounded-lg bg-primary/90 py-3 text-center font-medium text-black transition-all duration-300 active:scale-[0.98]"
 			>
-				Comenzar
+				App Clientes
 			</a>
 		</div>
 	</div>

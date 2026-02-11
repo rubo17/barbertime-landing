@@ -1,0 +1,38 @@
+---
+import demoVideo from '../assets/demo.mp4';
+---
+
+<section id="demo" class="py-20 md:py-32">
+	<div class="mx-auto max-w-6xl px-6">
+		<div class="mx-auto max-w-2xl text-center">
+			<h2 class="text-3xl font-bold md:text-4xl">
+				Mira cómo funciona
+			</h2>
+			<p class="mt-4 text-text-secondary">
+				Descubre lo fácil que es gestionar tu barbería con BarberTime.
+			</p>
+		</div>
+
+		<div class="mt-12 flex justify-center">
+			<div class="relative w-full max-w-4xl overflow-hidden rounded-2xl border border-border bg-bg-card shadow-2xl shadow-primary/5">
+				<video
+					class="w-full"
+					controls
+					playsinline
+					preload="metadata"
+					poster=""
+				>
+					<source src={demoVideo} type="video/mp4" />
+					Tu navegador no soporta el elemento de video.
+				</video>
+
+				<div class="pointer-events-none absolute inset-0 rounded-2xl ring-1 ring-inset ring-white/10"></div>
+			</div>
+		</div>
+	</div>
+
+	<div class="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
+		<div class="absolute top-1/2 left-1/4 h-64 w-64 rounded-full bg-primary/5 blur-3xl"></div>
+		<div class="absolute top-1/2 right-1/4 h-64 w-64 rounded-full bg-sub/5 blur-3xl"></div>
+	</div>
+</section>
